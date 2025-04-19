@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oto Klinik | Profesyonel Ekspertiz Hizmetleri</title>
+    <meta
+      name="description"
+      content="2.el araç alırken güvenilir ekspertiz hizmeti. 250+ kontrol noktası, detaylı raporlama ve uygun fiyat garantisi."
+    />
+    <!-- Fontlar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Barlow+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Ikonlar -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary: #dc3545;
+        --secondary: #2c3e50;
+        --accent: #e9ecef;
+        --dark: #212529;
+        --light: #f8f9fa;
+        --success: #28a745;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
+
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .logo img {
+        height: 50px;
+        width: auto;
+        max-width: 120px;
+      }
+
+      .logo-text {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .logo-text span {
+        color: var(--secondary);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: var(--secondary);
+        font-weight: 500;
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      nav ul li a:hover {
+        color: var(--primary);
+      }
+
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: var(--primary);
+        bottom: -5px;
+        left: 0;
+        transition: width 0.3s;
+      }
+
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      .mobile-menu {
+        display: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(
+            rgba(44, 62, 80, 0.8),
+            rgba(44, 62, 80, 0.8)
+          ),
+          url("https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+            center/cover no-repeat;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: white;
+        padding-top: 80px;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 3.5rem;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s;
+        margin: 0 10px;
+      }
+
+      .btn-primary {
+        background: var(--primary);
+        color: white;
+        border: 2px solid var(--primary);
+      }
+
+      .btn-primary:hover {
+        background: transparent;
+        color: white;
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-outline:hover {
+        background: white;
+        color: var(--secondary);
+      }
+
+      /* Hizmetler */
+      .services {
+        padding: 80px 0;
+        background: var(--light);
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .section-title h2 {
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 2.5rem;
+        color: var(--secondary);
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title h2::after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 4px;
+        background: var(--primary);
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .service-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .service-content {
+        padding: 25px;
+      }
+
+      .service-content h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        color: var(--secondary);
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+
+      .service-content p {
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .service-features {
+        margin-top: 20px;
+      }
+
+      .service-features li {
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+      }
+
+      .service-features i {
+        color: var(--primary);
+        margin-right: 10px;
+      }
+
+      /* Süreç */
+      .process {
+        padding: 80px 0;
+        background: var(--secondary);
+        color: white;
+      }
+
+      .process-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        position: relative;
+      }
+
+      .process-steps::before {
+        content: "";
+        position: absolute;
+        top: 40px;
+        left: 50px;
+        right: 50px;
+        height: 3px;
+        background: rgba(255, 255, 255, 0.3);
+        z-index: 1;
+      }
+
+      .step {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        flex: 1;
+        padding: 0 15px;
+      }
+
+      .step-number {
+        background: var(--primary);
+        color: white;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 auto 20px;
+        border: 5px solid var(--secondary);
+      }
+
+      .step h3 {
+        margin-bottom: 15px;
+        font-family: "Barlow Condensed", sans-serif;
+        font-size: 1.5rem;
+      }
+
+      /* Neden Biz */
+      .why-us {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .feature-card {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 8px;
+        background: var(--light);
+        transition: all 0.3s;
+      }
+
+      .feature-card:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-5px);
+      }
+
+      .feature-card:hover i,
+      .feature-card:hover h3,
+      .feature-card:hover p {
+        color: white;
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        color: var(--primary);
+        margin-bottom: 20px;
+        transition: all 0.3s;
+      }
+
+      .feature-card h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        margin-bottom: 15px;
+        color: var(--secondary);
+        transition: all 0.3s;
+      }
+
+      .feature-card p {
+        color: #555;
+        transition: all 0.3s;
+      }
+
+      /* Ekip */
+      .team {
+        padding: 80px 0;
+        background: var(--light);
+      }
+
+      .team-members {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .member-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: all 0.3s;
+      }
+
+      .member-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      }
+
+      .member-img {
+        height: 250px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .member-info {
+        padding: 25px;
+      }
+
+      .member-info h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        color: var(--secondary);
+        margin-bottom: 5px;
+      }
+
+      .member-info p {
+        color: var(--primary);
+        margin-bottom: 15px;
+        font-weight: 500;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .social-links a {
+        color: var(--secondary);
+        font-size: 1.2rem;
+        transition: color 0.3s;
+      }
+
+      .social-links a:hover {
+        color: var(--primary);
+      }
+
+      /* İletişim */
+      .contact {
+        padding: 80px 0;
+        background: white;
+      }
+
+      .contact-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 50px;
+        margin-top: 50px;
+      }
+
+      .contact-info {
+        margin-bottom: 30px;
+      }
+
+      .contact-info h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        color: var(--secondary);
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+      }
+
+      .contact-details {
+        margin-bottom: 30px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .contact-icon {
+        color: var(--primary);
+        font-size: 1.2rem;
+        margin-right: 15px;
+        margin-top: 5px;
+      }
+
+      .contact-text h4 {
+        margin-bottom: 5px;
+        color: var(--secondary);
+      }
+
+      .contact-form .form-group {
+        margin-bottom: 20px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: "Roboto", sans-serif;
+        transition: all 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+      }
+
+      textarea.form-control {
+        min-height: 150px;
+        resize: vertical;
+      }
+
+      .submit-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+      }
+
+      .submit-btn:hover {
+        background: #c82333;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: white;
+        padding: 50px 0 20px;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-col h3 {
+        font-family: "Barlow Condensed", sans-serif;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        position: relative;
+      }
+
+      .footer-col h3::after {
+        content: "";
+        position: absolute;
+        width: 50px;
+        height: 3px;
+        background: var(--primary);
+        bottom: -10px;
+        left: 0;
+      }
+
+      .footer-col p {
+        margin-bottom: 20px;
+        opacity: 0.8;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+        list-style: none;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+
+      .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+      }
+
+      .copyright {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        opacity: 0.7;
+      }
+
+      /* Responsive */
+      @media (max-width: 992px) {
+        .hero h1 {
+          font-size: 2.8rem;
+        }
+
+        .process-steps {
+          flex-wrap: wrap;
+        }
+
+        .step {
+          flex: 0 0 50%;
+          margin-bottom: 40px;
+        }
+
+        .process-steps::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          display: none;
+        }
+
+        .mobile-menu {
+          display: block;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .btn {
+          display: block;
+          margin: 10px auto;
+          max-width: 200px;
+        }
+
+        .step {
+          flex: 0 0 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img
+            src="assets/images/otoklinik-logo.png"
+            alt="Oto Klinik logo"
+            class="img"
+          />
+          <div class="logo-text">OTO<span>KLİNİK</span></div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Anasayfa</a></li>
+            <li><a href="#services">Hizmetler</a></li>
+            <li><a href="#process">Süreç</a></li>
+            <li><a href="#team">Ekip</a></li>
+            <li><a href="#contact">İletişim</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-menu">
+          <i class="fas fa-bars"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <h1>2.El Araç Alırken Güvenli Adres</h1>
+        <p>
+          250+ kontrol noktası ile aracınızı detaylı şekilde inceliyor,
+          ekspertiz raporunuzu 50 dakika içinde teslim ediyoruz.
+        </p>
+        <div class="cta-buttons">
+          <a href="#contact" class="btn btn-primary">Hemen Randevu Al</a>
+          <a href="#services" class="btn btn-outline">Hizmetlerimiz</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hizmetler -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Ekspertiz Hizmetlerimiz</h2>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Standart Ekspertiz"
+              class="service-img"
+            />
+            <div class="service-content">
+              <h3>Kaporta paketi</h3>
+              <p>
+                Aracın Kaporta , şase , podye gibi kaporta bileşenlerini kontrol
+                eden temel hizmetimiz.
+              </p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Kaporta/Boya Testi</li>
+                <li>
+                  <i class="fas fa-check"></i> Ön Takım, Yürür Aksam Kontrolü
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80"
+              alt="Detaylı Ekspertiz"
+              class="service-img"
+            />
+            <div class="service-content">
+              <h3>Kaporta ve Motor paketi</h3>
+              <p>
+                Aracın Kaporta ve Motor sistemlerinin kapsamlı şekilde
+                incelendiği profesyonel hizmet.
+              </p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Kaporta/Boya Testi</li>
+                <li><i class="fas fa-check"></i> Motor Mekanik Kontrolü</li>
+                <li>
+                  <i class="fas fa-check"></i> Fren, Süspansiyon, Yanal Kayma
+                  Testi veya Yol Testi Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>Ön Takım, Yürür Aksam Kontrolü
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1493238792000-8113da705763?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Kurumsal Ekspertiz"
+              class="service-img"
+            />
+            <div class="service-content">
+              <h3>Demir paket</h3>
+              <p>
+                Aracın kapsamlı olarak incelendiği özel geliştirilmiş hizmet
+                paketi.
+              </p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Kaporta / Boya Kontrolü</li>
+                <li><i class="fas fa-check"></i> Motor Mekanik Kontrolü</li>
+                <li>
+                  <i class="fas fa-check"></i> OBD Elektronik Arıza Tespit
+                  Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Dyno Motor Performans Testi veya
+                  Yol Testi Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Sorgu Hizmeti (KM, Borç, Hasar)
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1364&q=80"
+              alt="Çetin Paket"
+              class="service-img"
+            />
+            <div class="service-content">
+              <h3>Çetin Paket</h3>
+              <p>
+                En kapsamlı ekspertiz hizmetimiz ile aracınızın tüm detaylarını
+                kontrol ediyoruz.
+              </p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Kaporta/Boya Testi</li>
+                <li><i class="fas fa-check"></i> Motor Mekanik Kontrolü</li>
+                <li>
+                  <i class="fas fa-check"></i> OBD Elektronik Arıza Tespit
+                  Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Dyno Motor Performans Testi veya
+                  Yol Testi Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Sorgu Hizmeti (KM, Borç, Hasar)
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Conta Yanık (CO2 Kaçak) Testi
+                </li>
+                <li>
+                  <i class="fas fa-check"></i>Hava Yastığı Cihaz ve Fiziki
+                  Kontrolü
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-card">
+            <img
+              src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              alt="Lounge Paket"
+              class="service-img"
+            />
+            <div class="service-content">
+              <h3>Lounge Paket</h3>
+              <p>
+                Müşterimiz havalimanından özel araçla karşılanır, araç alım
+                süreci boyunca yanında refakat edilir. Tüm işlemler
+                tamamlandıktan sonra noter sonrası uğurlanır. Konforlu ve
+                sorunsuz bir deneyim sunar.
+              </p>
+              <ul class="service-features">
+                <li><i class="fas fa-check"></i> Kaporta/Boya Testi</li>
+                <li><i class="fas fa-check"></i> Motor Mekanik Kontrolü</li>
+                <li>
+                  <i class="fas fa-check"></i> OBD Elektronik Arıza Tespit
+                  Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Dyno Motor Performans Testi veya
+                  Yol Testi Kontrolü
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Sorgu Hizmeti (KM, Borç, Hasar)
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Conta Yanık (CO2 Kaçak) Testi
+                </li>
+                <li>
+                  <i class="fas fa-check"></i> Hava Yastığı Cihaz ve Fiziki
+                  Kontrolü
+                </li>
+                <li><i class="fas fa-check"></i> Özel Donanım Kontrolleri</li>
+                <li><i class="fas fa-check"></i>Usta Desteği</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Süreç -->
+    <section id="process" class="process">
+      <div class="container">
+        <div class="section-title">
+          <h2 style="color: white">Ekspertiz Sürecimiz</h2>
+        </div>
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Randevu</h3>
+            <p>Online form veya telefon ile kolay randevu</p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Ön Değerlendirme</h3>
+            <p>Aracın temel bilgilerinin alınması</p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Fiziksel Muayene</h3>
+            <p>250+ noktada detaylı kontrol</p>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <h3>Raporlama</h3>
+            <p>Ekspertiz raporunun hazırlanması</p>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div>
+            <h3>Teslimat</h3>
+            <p>Raporun tarafınıza iletilmesi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Neden Biz -->
+    <section class="why-us">
+      <div class="container">
+        <div class="section-title">
+          <h2>Neden Oto Klinik?</h2>
+        </div>
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-car-crash"></i>
+            </div>
+            <h3>5 Yıllık Tecrübe</h3>
+            <p>2000+ araçta uzmanlık seviyesinde ekspertiz deneyimi</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clipboard-check"></i>
+            </div>
+            <h3>Detaylı Rapor</h3>
+            <p>250'den fazla kontrol noktası ile kapsamlı inceleme</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">₺</div>
+            <h3>Uygun Fiyat</h3>
+            <p>Piyasa standartlarının altında fiyat politikası</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Hızlı Hizmet</h3>
+            <p>50 dakika da rapor teslimi</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ekip -->
+    <section id="team" class="team">
+      <div class="container">
+        <div class="section-title">
+          <h2>Uzman Ekibimiz</h2>
+        </div>
+        <div class="team-members">
+          <div class="member-card">
+            <img
+              src="assets/images/enes demir.png"
+              alt="ENES"
+              class="member-img"
+            />
+            <div class="member-info">
+              <h3>Enes Demir</h3>
+              <p>Kaporta ve Motor Ustası</p>
+              <div class="social-links"></div>
+            </div>
+          </div>
+          <div class="member-card">
+            <img
+              src="assets/images/kadir çetin.png"
+              alt=" KADİR"
+              class="member-img"
+            />
+            <div class="member-info">
+              <h3>Kadir Can Çetin</h3>
+              <p>Kaporta Ustası</p>
+              <div class="social-links"></div>
+              </div>
+            </div>
+          </div>
+    <!-- İletişim -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>İletişim</h2>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <h3>Bize Ulaşın</h3>
+            <div class="contact-details">
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Adres</h4>
+                  <p>Gebze Yeni çarşı Gebze/Kocaeli</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Telefon</h4>
+                  <p>0540 019 84 01</p>
+                  <p>0539 694 57 62</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>E-posta</h4>
+                  <p>otoguvence41@gmail.com</p>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="contact-text">
+                  <h4>Çalışma Saatleri</h4>
+                  <p>Pazartesi-Cumartesi: 09:00-19:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form">
+            <h3>Randevu Formu</h3>
+            <form>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Adınız Soyadınız"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="E-posta Adresiniz"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="tel"
+                  class="form-control"
+                  placeholder="Telefon Numaranız"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <select class="form-control" required>
+                  <option value="">Hizmet Seçiniz</option>
+                  <option>Kaporta Paketi</option>
+                  <option>Kaporta ve Motor Paketi</option>
+                  <option>Demir Paket</option>
+                  <option>Çetin Paket</option>
+                  <option>Lounge Paket</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  placeholder="Mesajınız"
+                  rows="4"
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div class="footer-col">
+            <h3>Oto Klinik</h3>
+            <p>
+              Profesyonel ekspertiz hizmetleriyle ikinci el ve sıfır araç
+              alım-satımında güvenilir çözümler sunuyoruz.
+            </p>
+          </div>
+          <div class="footer-col">
+            <h3>Hızlı Linkler</h3>
+            <ul class="footer-links">
+              <li><a href="#home">Anasayfa</a></li>
+              <li><a href="#services">Hizmetler</a></li>
+              <li><a href="#process">Süreç</a></li>
+              <li><a href="#team">Ekip</a></li>
+              <li><a href="#contact">İletişim</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Hizmetlerimiz</h3>
+            <ul class="footer-links">
+              <li><a href="#">Kaporta Paketi</a></li>
+              <li><a href="#">Kaporta ve Motor Paketi</a></li>
+              <li><a href="#">Demir Paket</a></li>
+              <li><a href="#">Çetin Paket</a></li>
+              <li><a href="#">Lounge Paket</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h3>Sosyal Medya</h3>
+            <div class="social-links">
+              <a
+                href="https://www.instagram.com/otoklinikotoekspertiz?igsh=MXFrazhtZmZqandocA%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
